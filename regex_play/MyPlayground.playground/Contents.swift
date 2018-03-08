@@ -132,3 +132,50 @@ listMatches(pattern: "\\d?\\d:\\d\\d", inString: digitExample)
 
 
 //: **\b** matches word boundary characters such as spaces and punctuation. `to\b` will match the "to" in "to the moon" and "to!", but it will not match "tomorrow". `\b` is handy for "whole word" type matching.
+
+
+let boundaryExample = "to the moon! when to go? tomorrow?"
+
+listMatches(pattern: "to\\b", inString: boundaryExample)
+
+
+
+//: **\s** matches whitespace characters such as spaces, tabs, and newlines. `hello\s` will match "hello " in "Well, hello there!".
+
+let whitespaceExample = "Well, hello there!"
+
+listMatches(pattern: "hello\\s", inString: whitespaceExample)
+
+
+
+//: **^** matches at the beginning of a line. Note that this particular ^ is different from ^ inside of the square brackets! For example, `^Hello` will match against the string "Hello there", but not "He said Hello".
+
+let beginningExample = "Hello there! He said hello."
+
+highlightMatches(pattern: "^hello", inString: beginningExample)
+
+
+
+//: **$** matches at the end of a line. For example, `the end$` will match against "It was the end" but not "the end was near"
+
+
+let endExample = "The end was near. It was the end"
+
+highlightMatches(pattern: "end$", inString: endExample)
+
+
+
+//: **\*** matches the previous element 0 or more times. `12*3` will match 13, 123, 1223, 122223, and 1222222223.
+
+
+
+let zeroOrMoreExample = "13, 123, 1223, 122223, 1222222223, 143222343"
+
+highlightMatches(pattern: "12*3", inString: zeroOrMoreExample)
+
+//: **+** matches the previous element 1 or more times. `12+3` will match 123, 1223, 122223, 1222222223, but not 13.
+
+let oneOrMoreExample = "13, 123, 1223, 122223, 1222222223, 143222343"
+
+highlightMatches(pattern: "12+3", inString: oneOrMoreExample)
+

@@ -61,7 +61,7 @@ https://github.com/firasdib/Regex101
 <hr>
 
 
-<q>
+<code>
 备注：
 
 <h5>HTML 操作</h5>
@@ -78,4 +78,4 @@ Use the <ul> tag together with the <li> tag to create unordered lists.
     html 原样输出， pre + 转义
 </li>
 </ul>
-</q>
+</code>

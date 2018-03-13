@@ -51,13 +51,13 @@ https://github.com/firasdib/Regex101
 
 
 <h4>备注： <h4><h5>HTML 操作</h5>
-<ul>
-<li>
-In HTML 4.01, the <hr> tag represents a horizontal rule.
-</li>
-<li>The <ul> tag defines an unordered (bulleted) list.<br>
-Use the <ul> tag together with the <li> tag to create unordered lists.
-</li>
-<li>html 原样输出， pre + 转义</li>
-</ul>
-
+<pre>
+&lt;<ul>&gt
+&lt;<li>&gt
+In HTML 4.01, the &lt;<hr>&gt tag represents a horizontal rule.
+&lt;</li>&gt
+&lt;<li>&gt The &lt; <ul>&gt  tag defines an unordered (bulleted) list.Use the &lt;<ul> tag together with the &lt;<li>&gt  tag to create unordered lists.
+&lt;</li>&gt
+&lt;<li>&gt html 原样输出， pre + 转义&lt;</li>&gt
+&lt;</ul>&gt
+</pre>

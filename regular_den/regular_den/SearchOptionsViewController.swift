@@ -28,6 +28,12 @@ class SearchOptionsViewController: UITableViewController {
         }
     }
     
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var replacementTextField: UITextField!
+    @IBOutlet weak var replaceTextSwitch: UISwitch!
+    
+    @IBOutlet weak var matchCaseSwitch: UISwitch!
+    @IBOutlet weak var wholeWordsSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +45,19 @@ class SearchOptionsViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let options = searchOptions{
+            searchTextField.text = options.searchString
+            replacementTextField.text = options.replacementString
+            replaceTextSwitch.isOn = options.matchCase
+            wholeWordsSwitch.isOn = options.wholeWords
+        }
+        searchTextField.becomeFirstResponder()
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,19 +123,33 @@ class SearchOptionsViewController: UITableViewController {
     */
     
     
+    //MARK:- Actions
     
-    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+    
+    
+    @IBAction func replaceTextSwitchToggled(_ sender: UISwitch) {
         
-        performSegue(withIdentifier: Storyboard.Identifiers.UnwindSegueIdentifier, sender: self)
-        
-        
+        replacementTextField.isEnabled = replaceTextSwitch.isOn
         
     }
     
     
     
+    
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        searchOptions = nil
+        performSegue(withIdentifier: Storyboard.Identifiers.UnwindSegueIdentifier, sender: self)
+    }
+    
     @IBAction func searchTapped(_ sender: UIBarButtonItem) {
-        
+        var replaceStr: String?
+        if replaceTextSwitch.isOn {
+            replaceStr = replacementTextField.text ?? ""
+        }
+        else{
+            replaceStr = ""
+        }
+        searchOptions = SearchOptions(searchString: searchTextField.text!, replacementString: replaceStr, matchCase: matchCaseSwitch.isOn, wholeWords: wholeWordsSwitch.isOn)
         
         performSegue(withIdentifier: Storyboard.Identifiers.UnwindSegueIdentifier, sender: self)
         

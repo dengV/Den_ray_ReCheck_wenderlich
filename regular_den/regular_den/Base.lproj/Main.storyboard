@@ -142,7 +142,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
         <scene sceneID="31c-gY-r4f">
             <objects>
                 <tableViewController id="ihC-Gf-5lP" customClass="SearchOptionsViewController" customModule="regular_den" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jEJ-HA-5Yg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="jEJ-HA-5Yg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -184,6 +184,9 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                                                 </textField>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i0g-aF-Quj">
                                                     <rect key="frame" x="311" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="replaceTextSwitchToggled:" destination="ihC-Gf-5lP" eventType="valueChanged" id="fTE-UE-kTG"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -201,7 +204,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                             <tableViewSection id="GTM-eK-9VE">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wg8-0E-eOE">
-                                        <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wg8-0E-eOE" id="tKk-bd-he7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -228,7 +231,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FLK-wY-j5z">
-                                        <rect key="frame" x="0.0" y="203" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="187" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FLK-wY-j5z" id="IeD-My-tHf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -275,6 +278,11 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="matchCaseSwitch" destination="doT-Kx-8X1" id="4Fc-Jo-rnT"/>
+                        <outlet property="replaceTextSwitch" destination="i0g-aF-Quj" id="esZ-QG-DO2"/>
+                        <outlet property="replacementTextField" destination="XHY-as-Sxa" id="DWJ-DX-Eyp"/>
+                        <outlet property="searchTextField" destination="rvM-gF-91S" id="rGg-ur-A9f"/>
+                        <outlet property="wholeWordsSwitch" destination="AkI-PO-GLs" id="3Qr-CD-uhP"/>
                         <segue destination="xNm-gv-AmO" kind="unwind" identifier="UnwindSegue" unwindAction="unwindToTextHighlightViewControllerWithSegue:" id="ok0-pe-zge"/>
                     </connections>
                 </tableViewController>
@@ -344,7 +352,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
         <scene sceneID="3Qn-DA-Ci0">
             <objects>
                 <tableViewController id="LPn-mq-Obl" customClass="SignUpViewController" customModule="regular_den" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7TM-RV-ZCC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="35" sectionFooterHeight="10" id="7TM-RV-ZCC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -352,7 +360,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                             <tableViewSection headerTitle="Personal details" id="Y5w-ip-tqA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xnG-0E-06D">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xnG-0E-06D" id="2LB-eC-IDX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -376,7 +384,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="69N-h0-Bvy">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="69N-h0-Bvy" id="sqm-VX-7fV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -400,7 +408,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="x7R-Cf-9ax">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x7R-Cf-9ax" id="ooi-oq-gbX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -424,7 +432,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="O14-Hb-6Gh">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O14-Hb-6Gh" id="CH4-t4-Oh5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -456,7 +464,11 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sign Up" id="sp4-3q-heB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="edk-NX-iCM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="edk-NX-iCM">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="LPn-mq-Obl" id="LF8-oR-Kcj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateOfBirthField" destination="n0p-T5-pYp" id="olO-Yw-Hg7"/>

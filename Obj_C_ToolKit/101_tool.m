@@ -37,6 +37,27 @@ button.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 
+
+#pragma mark - Manaully Unwind Segue
+
+// https://stackoverflow.com/questions/12509422/how-to-perform-unwind-segue-programmatically
+//  How to perform Unwind segue programmatically?
+
+/*
+ Create a manual segue (ctrl-drag from File’s Owner to Exit),
+ 
+ Choose it in the Left Controller Menu below green EXIT button.
+ 
+ 
+ 
+ Insert Name of Segue to unwind.
+ 
+ Then,- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender. with your segue identify.
+ */
+
+// 如果 连不了， 就 写下 @IBAction , 就可以 连线了
+
+
 @end
 
 

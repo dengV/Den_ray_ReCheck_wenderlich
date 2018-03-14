@@ -11,7 +11,7 @@ func highlightMatches(pattern: String, inString string: String) -> NSAttributedS
     
     let range = NSRange(location: 0, length: string.count)
     
-    let matches = regex.matches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range) as! [NSTextCheckingResult]
+    let matches = regex.matches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range)
     
     
     let attributedText = NSMutableAttributedString(string: string)
@@ -29,7 +29,7 @@ func listMatches(pattern: String, inString string: String) -> [String]{
     
     let range = NSRange(location: 0, length: string.count)
     
-    let matches = regex.matches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range) as! [NSTextCheckingResult]
+    let matches = regex.matches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range)
     
     return matches.map{
         let range = $0.range
@@ -42,7 +42,7 @@ func listMatches(pattern: String, inString string: String) -> [String]{
 func listGroups(pattern: String, inString string: String) -> [String]{
     let regex = try! NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
     let range = NSRange(location: 0, length: string.count)
-    let matches = regex.matches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range) as! [NSTextCheckingResult]
+    let matches = regex.matches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range) 
     print("listGroups- matches \(matches)")
     var groupMatches = [String]()
     
